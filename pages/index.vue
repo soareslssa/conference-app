@@ -9,9 +9,25 @@
       </div>
     </v-parallax>
   </div>
-  <div id="event-cover" class="d-flex flex-column h-25 align-center pa-16">
-    <h1 class="text-h4 text-xs-h6 text font-height-thin ">{{eventTitle}}</h1>
-    <v-icon icon="fa-solid fa-calendar"></v-icon>
+
+  <div
+    class="d-flex justify-center align-center h-25"
+  >
+    <v-card elevation="0">
+      <v-card-title class="text-h4 text-xs-h6 font-weight-black">
+        {{ event.title }}
+      </v-card-title>
+      <v-card-text>
+        <div class="my-2">
+          <v-icon icon="fa-solid fa-calendar" />
+          {{ event.startDate + ` > ` + event.endDate }}
+        </div>
+        <div class="my-2">
+          <v-icon icon="fa-solid fa-location-dot"/>
+          {{  event.location }}
+        </div>
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 <script>
@@ -19,10 +35,14 @@ import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-
     return {
-      eventTitle: 'WE MAKE BETTER DAYS l CARNIVAL EDITION 2024'
-    }
+      event: {
+        title: "WE MAKE BETTER DAYS l CARNIVAL EDITION 2024",
+        startDate: "2024-02-09",
+        endDate: "2024-02-12",
+        location: "Evento presencial em Igreja Unidade em Cristo, Rio de Janeiro - RJ"
+      },
+    };
   },
 });
 </script>
