@@ -9,27 +9,26 @@
       </div>
     </v-parallax>
   </div>
-
-  <div class="d-flex justify-center align-center h-25">
-    <v-card elevation="0">
-      <v-card-title class="text-h4 text-xs-h6 font-weight-black">
-        {{ event.title }}
-      </v-card-title>
-      <v-card-text>
-        <div class="my-2">
+  <div class="d-flex flex-column my-8">
+    <div class="d-flex align-center flex-column">
+      <div class="justify-center align-center w-50">
+        <div class="text-h4 font-weight-black my-4">{{ event.title }}</div>
+        <div class="my-4">
           <v-icon icon="fa-solid fa-calendar" />
           {{ event.startDate + ` > ` + event.endDate }}
         </div>
-        <div class="my-2">
+        <div class="my-4">
           <v-icon icon="fa-solid fa-location-dot" />
           {{ event.location }}
         </div>
-      </v-card-text>
-    </v-card>
-  </div>
-  <div class="d-flex justify-center flex-column w-25">
-    <div class="text-h5 font-weight-black my-4">Descrição do evento</div>
-    <div> {{  event.description }}</div>
+      </div>
+    </div>
+    <div class="d-flex align-center flex-column my-8">
+      <div class="justify-center align-center w-50">
+        <div class="text-h5 font-weight-black my-4">Descrição do evento</div>
+        <div>{{ event.description }}</div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -40,7 +39,8 @@ export default defineComponent({
     return {
       event: {
         title: "WE MAKE BETTER DAYS l CARNIVAL EDITION 2024",
-        cover: "https://images.unsplash.com/photo-1604177052603-c2b4cff228db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        cover:
+          "https://images.unsplash.com/photo-1604177052603-c2b4cff228db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         startDate: "2024-02-09",
         endDate: "2024-02-12",
         location:
