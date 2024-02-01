@@ -11,7 +11,7 @@
   </div>
   <div id="event-cover" class="d-flex flex-column h-25 align-center pa-16">
     <h1 class="text-h4 text-xs-h6 text font-height-thin ">{{eventTitle}}</h1>
-    <i class="fa-solid fa-calendar"></i>
+    <v-icon icon="fa-solid fa-calendar"></v-icon>
   </div>
 </template>
 <script>
