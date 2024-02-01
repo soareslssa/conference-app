@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex h-50">
+  <div class="d-flex h-25">
     <v-parallax :src="event.cover">
       <div
         class="d-flex flex-column fill-height justify-center align-center text-white"
@@ -12,6 +12,9 @@
   <div class="d-flex flex-column my-8">
     <div class="d-flex align-center flex-column">
       <div class="justify-center align-center w-50">
+        <v-chip class="pa-4" color="primary">
+          <v-icon icon="fa-regular fa-credit-card mr-2"/>
+          Parcele sua compra em até 12x</v-chip>
         <div class="text-h4 font-weight-black my-4">{{ event.title }}</div>
         <div class="my-4">
           <v-icon icon="fa-solid fa-calendar" />
