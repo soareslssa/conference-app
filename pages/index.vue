@@ -9,29 +9,38 @@
       </div>
     </v-parallax>
   </div>
-  <div class="d-flex flex-column my-8">
-    <div class="d-flex align-center flex-column">
-      <div class="justify-center align-center w-50">
-        <v-chip class="pa-4" color="primary">
-          <v-icon icon="fa-regular fa-credit-card mr-2"/>
-          Parcele sua compra em até 12x</v-chip>
-        <div class="text-h4 font-weight-black my-4">{{ event.title }}</div>
+  <div class="d-flex flex-column my-4 pa-4">
+    <section name="header" class="d-flex align-md-center flex-md-column">
+      <div>
+        <v-chip color="primary">
+          <i class="fa-regular fa-credit-card mr-2"></i>
+          Parcele sua compra em até 12x</v-chip
+        >
+        <div
+          class="text-h5 text-md-h4 text-left md:text-center font-weight-black"
+        >
+          {{ event.title }}
+        </div>
         <div class="my-4">
-          <v-icon icon="fa-solid fa-calendar" />
+          <i class="fa-regular fa-calendar fa-xl mr-2"></i>
           {{ event.startDate + ` > ` + event.endDate }}
         </div>
-        <div class="my-4">
-          <v-icon icon="fa-solid fa-location-dot" />
-          {{ event.location }}
+        <div >
+          <i class="fa-solid fa-location-dot fa-xl mr-2"></i>
+          Evento presencial em 
+          <a :href="event.link">{{ event.location }} </a>
         </div>
       </div>
-    </div>
-    <div class="d-flex align-center flex-column my-8">
-      <div class="justify-center align-center w-50">
-        <div class="text-h5 font-weight-black my-4">Descrição do evento</div>
-        <div>{{ event.description }}</div>
+    </section>
+
+    <section name="description" class="d-flex align-md-center flex-md-column">
+      <div class="d-flex flex-column align-md-center ">
+        <div class="justify-center align-center">
+          <div class="text-h5 font-weight-black my-4">Descrição do evento</div>
+          <div>{{ event.description }}</div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 <script>
@@ -47,7 +56,8 @@ export default defineComponent({
         startDate: "2024-02-09",
         endDate: "2024-02-12",
         location:
-          "Evento presencial em Igreja Unidade em Cristo, Rio de Janeiro - RJ",
+          "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
+          link: "http://www.instagram.com/unidadeemcristooficial",
         description:
           "Bem-vindos, homens de de Deus, ao primeiro culto especial com o tema 'Mover'. Nos reuniremos para juntos caminharmos a jornada de movimento em nossas vidas. Como homens, somos chamados a avançar, superar desafios e crescer em todas as áreas. Neste momento importantíssimo para nosas vidas, refletiremos sobre a coragem que nos impulsiona, a resiliência que nos move adiante e a fé que nos guia em cada passo. Que este culto inspire ação, desperte o propósito e fortaleça os laços  que nos unem como seguidores comprometidos da caminhada com Deus. Esperamos por você e te desafiamos a convidar outro homem para estar conosco. A entrada é franca, mas pedimos que traga 1Kg de alimento não perecível para ajudarmos famílias assitidas pela nossa Ação Social.",
       },
