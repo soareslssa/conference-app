@@ -9,44 +9,38 @@
       </div>
     </v-parallax>
   </div>
-  <v-container class="pa-4">
-    <v-row>
-      <v-col cols="2" class="d-none d-md-flex"></v-col>
-      <v-col>
-        <section name="header" class="align-md-center flex-md-column ga-3">
-          <v-chip class="my-4" color="primary">
-            <i class="fa-regular fa-credit-card mr-2"></i>
-            Parcele sua compra em até 12x</v-chip
-          >
-          <div class="d-flex flex-column text-center text-md-left ga-6">
-            <div class="text-h5 text-md-h4 font-weight-black">
-              {{ event.title }}
-            </div>
-            <div>
-              <i class="fa-regular fa-calendar mr-2"></i>
-              {{ event.startDate + ` > ` + event.endDate }}
-            </div>
-            <div>
-              <i class="fa-solid fa-location-dot mr-2"></i>
-              Evento presencial em
-              <a :href="event.link">{{ event.location }} </a>
-            </div>
-          </div>
-        </section>
 
-        <section name="description" class="align-md-center flex-md-column">
-          <div class="d-flex flex-column align-md-center">
-            <div class="justify-center align-center">
-              <div class="text-h5 font-weight-black my-4">
-                Descrição do evento
-              </div>
-              <div>{{ event.description }}</div>
-            </div>
-          </div>
-        </section>
-      </v-col>
-      <v-col cols="2" class="d-none d-md-flex"></v-col>
-    </v-row>
+  <v-container class="d-flex flex-column pa-4 ga-6">
+    <section>
+      <v-chip
+        class="my-4"
+        color="primary"
+        prepend-icon="fa-regular fa-credit-card"
+        text="Parcele sua compra em até 12x"
+      />
+      <div class="d-flex flex-column text-center text-md-left ga-6">
+        <div class="text-h5 text-md-h4 font-weight-black">
+          {{ event.title }}
+        </div>
+        <div>
+          <i class="fa-regular fa-calendar mr-2"></i>
+          {{ event.startDate + ` > ` + event.endDate }}
+        </div>
+        <div>
+          <i class="fa-solid fa-location-dot mr-2"></i>
+          Evento presencial em
+          <a :href="event.link">{{ event.location }} </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="d-flex flex-column ga-4">
+        <div class="text-h5 font-weight-black">Descrição do evento</div>
+        <div>{{ event.description }}</div>
+      </div>
+    </section>
+    
   </v-container>
 </template>
 <script>
@@ -70,3 +64,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.v-container {
+  max-width: 75rem;
+}
+</style>
