@@ -28,8 +28,7 @@
         </div>
         <div>
           <i class="fa-solid fa-location-dot mr-2"></i>
-          {{ event.category_sec.name }}
-          <a :href="event.url">{{ event.address.name }} </a>
+          {{ event.address.name + ` - ` + event.address.city + `, ` + event.address.state}}
         </div>
       </div>
     </section>
@@ -40,6 +39,13 @@
         <div>{{ event.detail }}</div>
       </div>
     </section>
+
+    <section>
+      <div class="d-flex flex-column ga-4">
+        <div class="text-h5 font-weight-black">Sobre o organizador</div>
+        <div>{{ event.host.name }}</div>
+      </div>
+    </section>
   </v-container>
 </template>
 <script>
@@ -48,7 +54,7 @@ import axios from "axios";
 
 export default defineComponent({
   setup() {
-    let event = {}
+    let event = {};
     return {
       event,
     };
@@ -63,8 +69,7 @@ export default defineComponent({
           },
         })
         .then((response) => {
-          let r = response.data
-          this.event = r.data
+          this.event = response.data.data;
           console.log(this.event)
         });
     },
