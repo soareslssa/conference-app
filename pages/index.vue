@@ -24,12 +24,12 @@
         </div>
         <div>
           <i class="fa-regular fa-calendar mr-2"></i>
-          {{ event.startDate + ` > ` + event.endDate }}
+          {{ event.start_date + ` > ` + event.end_date }}
         </div>
         <div>
           <i class="fa-solid fa-location-dot mr-2"></i>
-          {{ event.category }}
-          <a :href="event.url">{{ event.address }} </a>
+          {{ event.category_sec.name }}
+          <a :href="event.url">{{ event.address.name }} </a>
         </div>
       </div>
     </section>
@@ -44,23 +44,33 @@
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
+import axios from "axios";
 
 export default defineComponent({
   setup() {
+    let event = {}
     return {
-      event: {
-        name: "WE MAKE BETTER DAYS l CARNIVAL EDITION 2024",
-        image:
-          "https://images.unsplash.com/photo-1604177052603-c2b4cff228db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        startDate: "2024-02-09",
-        endDate: "2024-02-12",
-        address: "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
-        url: "http://www.instagram.com/unidadeemcristooficial",
-        detail:
-          "Bem-vindos, homens de de Deus, ao primeiro culto especial com o tema 'Mover'. Nos reuniremos para juntos caminharmos a jornada de movimento em nossas vidas. Como homens, somos chamados a avançar, superar desafios e crescer em todas as áreas. Neste momento importantíssimo para nosas vidas, refletiremos sobre a coragem que nos impulsiona, a resiliência que nos move adiante e a fé que nos guia em cada passo. Que este culto inspire ação, desperte o propósito e fortaleça os laços  que nos unem como seguidores comprometidos da caminhada com Deus. Esperamos por você e te desafiamos a convidar outro homem para estar conosco. A entrada é franca, mas pedimos que traga 1Kg de alimento não perecível para ajudarmos famílias assitidas pela nossa Ação Social.",
-        category: "Evento presencial",
-      },
+      event,
     };
+  },
+  methods: {
+    getEvent() {
+      axios
+        .get("https://api.sympla.com.br/public/v4/events/2338147", {
+          headers: {
+            s_token:
+              "65669bee0503134c00d6f9ba6f6223df1f6f4b07244781d7ccc7211ce50b822f",
+          },
+        })
+        .then((response) => {
+          let r = response.data
+          this.event = r.data
+          console.log(this.event)
+        });
+    },
+  },
+  mounted() {
+    this.getEvent();
   },
 });
 </script>
