@@ -9,38 +9,44 @@
       </div>
     </v-parallax>
   </div>
-  <div class="d-flex flex-column my-4 pa-4">
-    <section name="header" class="d-flex align-md-center flex-md-column">
-      <div>
-        <v-chip color="primary">
-          <i class="fa-regular fa-credit-card mr-2"></i>
-          Parcele sua compra em até 12x</v-chip
-        >
-        <div
-          class="text-h5 text-md-h4 text-left md:text-center font-weight-black"
-        >
-          {{ event.title }}
-        </div>
-        <div class="my-4">
-          <i class="fa-regular fa-calendar fa-xl mr-2"></i>
-          {{ event.startDate + ` > ` + event.endDate }}
-        </div>
-        <div >
-          <i class="fa-solid fa-location-dot fa-xl mr-2"></i>
-          Evento presencial em 
-          <a :href="event.link">{{ event.location }} </a>
-        </div>
-      </div>
-    </section>
+  <div class="v-container">
+    <div class="v-row">
+      <div class="v-col v-col-2 d-none d-md-flex"></div>
+      <div class="v-col">
+        <section name="header" class="align-md-center flex-md-column ga-3">
+          <v-chip class="my-4" color="primary">
+            <i class="fa-regular fa-credit-card mr-2"></i>
+            Parcele sua compra em até 12x</v-chip
+          >
+          <div class="d-flex flex-column text-center text-md-left ga-4">
+            <div class="text-h5 text-md-h4 font-weight-black">
+              {{ event.title }}
+            </div>
+            <div>
+              <i class="fa-regular fa-calendar mr-2"></i>
+              {{ event.startDate + ` > ` + event.endDate }}
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot mr-2"></i>
+              Evento presencial em
+              <a :href="event.link">{{ event.location }} </a>
+            </div>
+          </div>
+        </section>
 
-    <section name="description" class="d-flex align-md-center flex-md-column">
-      <div class="d-flex flex-column align-md-center ">
-        <div class="justify-center align-center">
-          <div class="text-h5 font-weight-black my-4">Descrição do evento</div>
-          <div>{{ event.description }}</div>
-        </div>
+        <section name="description" class="align-md-center flex-md-column">
+          <div class="d-flex flex-column align-md-center">
+            <div class="justify-center align-center">
+              <div class="text-h5 font-weight-black my-4">
+                Descrição do evento
+              </div>
+              <div>{{ event.description }}</div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+      <div class="v-col v-col-2 d-none d-md-flex"></div>
+    </div>
   </div>
 </template>
 <script>
@@ -55,9 +61,8 @@ export default defineComponent({
           "https://images.unsplash.com/photo-1604177052603-c2b4cff228db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         startDate: "2024-02-09",
         endDate: "2024-02-12",
-        location:
-          "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
-          link: "http://www.instagram.com/unidadeemcristooficial",
+        location: "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
+        link: "http://www.instagram.com/unidadeemcristooficial",
         description:
           "Bem-vindos, homens de de Deus, ao primeiro culto especial com o tema 'Mover'. Nos reuniremos para juntos caminharmos a jornada de movimento em nossas vidas. Como homens, somos chamados a avançar, superar desafios e crescer em todas as áreas. Neste momento importantíssimo para nosas vidas, refletiremos sobre a coragem que nos impulsiona, a resiliência que nos move adiante e a fé que nos guia em cada passo. Que este culto inspire ação, desperte o propósito e fortaleça os laços  que nos unem como seguidores comprometidos da caminhada com Deus. Esperamos por você e te desafiamos a convidar outro homem para estar conosco. A entrada é franca, mas pedimos que traga 1Kg de alimento não perecível para ajudarmos famílias assitidas pela nossa Ação Social.",
       },
