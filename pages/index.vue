@@ -9,16 +9,16 @@
       </div>
     </v-parallax>
   </div>
-  <div class="v-container">
-    <div class="v-row">
-      <div class="v-col v-col-2 d-none d-md-flex"></div>
-      <div class="v-col">
+  <v-container class="pa-4">
+    <v-row>
+      <v-col cols="2" class="d-none d-md-flex"></v-col>
+      <v-col>
         <section name="header" class="align-md-center flex-md-column ga-3">
           <v-chip class="my-4" color="primary">
             <i class="fa-regular fa-credit-card mr-2"></i>
             Parcele sua compra em até 12x</v-chip
           >
-          <div class="d-flex flex-column text-center text-md-left ga-4">
+          <div class="d-flex flex-column text-center text-md-left ga-6">
             <div class="text-h5 text-md-h4 font-weight-black">
               {{ event.title }}
             </div>
@@ -44,10 +44,10 @@
             </div>
           </div>
         </section>
-      </div>
-      <div class="v-col v-col-2 d-none d-md-flex"></div>
-    </div>
-  </div>
+      </v-col>
+      <v-col cols="2" class="d-none d-md-flex"></v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
