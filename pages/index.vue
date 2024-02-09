@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex h-25">
-    <v-parallax :src="event.cover">
+    <v-parallax :src="event.image">
       <div
         class="d-flex flex-column fill-height justify-center align-center text-white"
       >
@@ -20,7 +20,7 @@
       />
       <div class="d-flex flex-column text-center text-md-left ga-6">
         <div class="text-h5 text-md-h4 font-weight-black">
-          {{ event.title }}
+          {{ event.name }}
         </div>
         <div>
           <i class="fa-regular fa-calendar mr-2"></i>
@@ -28,8 +28,8 @@
         </div>
         <div>
           <i class="fa-solid fa-location-dot mr-2"></i>
-          Evento presencial em
-          <a :href="event.link">{{ event.location }} </a>
+          {{ event.category }}
+          <a :href="event.url">{{ event.address }} </a>
         </div>
       </div>
     </section>
@@ -37,10 +37,9 @@
     <section>
       <div class="d-flex flex-column ga-4">
         <div class="text-h5 font-weight-black">Descrição do evento</div>
-        <div>{{ event.description }}</div>
+        <div>{{ event.detail }}</div>
       </div>
     </section>
-    
   </v-container>
 </template>
 <script>
@@ -50,15 +49,16 @@ export default defineComponent({
   setup() {
     return {
       event: {
-        title: "WE MAKE BETTER DAYS l CARNIVAL EDITION 2024",
-        cover:
+        name: "WE MAKE BETTER DAYS l CARNIVAL EDITION 2024",
+        image:
           "https://images.unsplash.com/photo-1604177052603-c2b4cff228db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         startDate: "2024-02-09",
         endDate: "2024-02-12",
-        location: "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
-        link: "http://www.instagram.com/unidadeemcristooficial",
-        description:
+        address: "Igreja Unidade em Cristo, Rio de Janeiro - RJ",
+        url: "http://www.instagram.com/unidadeemcristooficial",
+        detail:
           "Bem-vindos, homens de de Deus, ao primeiro culto especial com o tema 'Mover'. Nos reuniremos para juntos caminharmos a jornada de movimento em nossas vidas. Como homens, somos chamados a avançar, superar desafios e crescer em todas as áreas. Neste momento importantíssimo para nosas vidas, refletiremos sobre a coragem que nos impulsiona, a resiliência que nos move adiante e a fé que nos guia em cada passo. Que este culto inspire ação, desperte o propósito e fortaleça os laços  que nos unem como seguidores comprometidos da caminhada com Deus. Esperamos por você e te desafiamos a convidar outro homem para estar conosco. A entrada é franca, mas pedimos que traga 1Kg de alimento não perecível para ajudarmos famílias assitidas pela nossa Ação Social.",
+        category: "Evento presencial",
       },
     };
   },
